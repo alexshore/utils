@@ -1,5 +1,6 @@
-use std::{env, path::PathBuf};
+use anyhow::Result;
 use clap::Parser;
+use std::path::PathBuf;
 
 #[derive(Parser, Debug)]
 #[command(version, about)]
@@ -7,19 +8,17 @@ struct Args {
     /// Optional directory
     dir: Option<PathBuf>,
 
+    /// Show hidden files
     #[arg(short = 'a', long)]
     show_all: bool,
 
+    /// Show extended information
     #[arg(short = 'l', long)]
-    long_listing: bool
-
+    long_listing: bool,
 }
 
-fn main() -> Result<(), ()>{
-    let args = Args::parse();
-    // let args = env::args().skip(1).collect::<Vec<_>>();
-
-    println!("{:?}", args);
+fn main() -> Result<()> {
+    let args = dbg!(Args::parse());
 
     Ok(())
 }

@@ -1,0 +1,28 @@
+# Plan
+
+- Start program with:
+    - Optional DIR arg (could do multiple??? idk how that would work) (use cwd as default)
+    - Flags:
+        - list everything   i.e. ls -a
+        - recurse (with depth)
+        - filter by extension(?)
+    - Formatting:
+        - list details      i.e. ls -l
+        - colors???
+        - list/tree view???
+        - cute table??
+    - Sorting options:
+        - Size (int)
+        - Creation (time)
+        - Modification (time)
+        - Name (alpha)
+        - Owner (alpha)
+        - Group (alpha)
+        - Permissions(?) maybe a little harder to do
+- Parse args.
+- Search through directories in top level, collect files
+    - if recurse flag then scan through following dirs also.
+        - how to keep track of the deeper files??? maybe a dict??? dirs as keys, lists of files as vals, recursive
+    - if not list everything then filter out hidden files (., .., .gitignore, .git, .vscode, etc.)
+- Sort files/dirs from command args
+- Print files/dirs according to formatting args 
